@@ -53,7 +53,7 @@
     justify-content:center;   /* centers the pair horizontally */
     align-items:stretch;      /* both blocks share one row height */
     gap:var(--col-gap);
-    padding:clamp(1.75rem,4vw,3rem) var(--gutter) clamp(3rem,7vw,5.5rem);
+    padding:clamp(1.75rem,4vw,3rem) var(--gutter) clamp(2.5rem,5vw,4rem);
   }
 
   .portrait{
@@ -92,6 +92,45 @@
   a:hover, a:focus-visible{ text-decoration-color:currentColor; }
   a:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; border-radius:2px; }
 
+  /* ---------- Select projects ---------- */
+  .projects{
+    max-width:calc(var(--photo-w) + var(--col-gap) + var(--text-w));
+    margin:0 auto;
+    padding:0 var(--gutter) clamp(3rem,7vw,5rem);
+  }
+  .projects__title{
+    margin:0 0 1.6em;
+    font-size:1em;
+    font-weight:600;
+    letter-spacing:.01em;
+  }
+  .projects__group{
+    margin:0 0 2.1em;
+  }
+  .projects__group:last-child{ margin-bottom:0; }
+
+  .projects h3{
+    margin:0 0 .7em;
+    font-size:.78em;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .projects ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .projects li{
+    margin:0 0 .55em;
+    line-height:1.5;
+  }
+  .projects li:last-child{ margin-bottom:0; }
+  .projects .note{
+    color:var(--ink-soft);
+  }
+
   /* ---------- Footer band, full-bleed dotted rules ---------- */
   .footer{
     border-top:1px dashed var(--rule);
@@ -126,6 +165,7 @@
     }
     .bio{ width:min(32rem,88vw); }
     .footer__inner{ max-width:min(32rem,88vw); padding-left:0; padding-right:0; }
+    .projects{ max-width:min(32rem,88vw); padding-left:0; padding-right:0; }
   }
 
   @media (prefers-reduced-motion:reduce){
@@ -162,6 +202,34 @@
 
   </div>
 </div>
+
+<section class="projects">
+  <p class="projects__title">Select projects:</p>
+
+  <div class="projects__group">
+    <h3>M&amp;A Diligence + Corporate Integrations</h3>
+    <ul>
+      <li><a href="https://www.esgdive.com/news/arcadia-acquires-engie-impact-unified-energy-management-platform/819341/" target="_blank" rel="noopener">Arcadia acquires Engie IMPACT</a></li>
+      <li><a href="https://www.globenewswire.com/news-release/2026/02/18/3240155/0/en/Perch-Energy-Announces-Acquisition-of-Mitsui-s-Solstice-Solidifying-the-Company-as-the-US-Leader-in-Community-Solar.html" target="_blank" rel="noopener">Perch acquires Solstice</a></li>
+    </ul>
+  </div>
+
+  <div class="projects__group">
+    <h3>GTM</h3>
+    <ul>
+      <li><a href="https://www.prnewswire.com/news-releases/elektra-health-and-oscar-launch-hellomeno-the-first-ever-menopause-health-plan-in-the-individual-market-302588091.html" target="_blank" rel="noopener">Elektra Health x Oscar Partnership</a> <span class="note">— Landmark partnership, the first ever menopause health plan</span></li>
+    </ul>
+  </div>
+
+  <div class="projects__group">
+    <h3>Network Activation</h3>
+    <ul>
+      <li>Climate Week Guides: <a href="https://luma.com/nycwguide2026" target="_blank" rel="noopener">New York</a>, <a href="https://luma.com/planeteer_sfcw" target="_blank" rel="noopener">San Francisco</a> <span class="note">— Definitive guides for investors &amp; founders navigating hundreds of climate gatherings</span></li>
+      <li><a href="https://lnkd.in/p/g3Wy7WTH" target="_blank" rel="noopener">Female Founders &amp; Funders</a> <span class="note">— 3K women connected, $2T AUM represented</span></li>
+      <li><a href="https://lnkd.in/p/gdCD8fXF" target="_blank" rel="noopener">NY Hardware Meet Up</a></li>
+    </ul>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="footer__inner">
