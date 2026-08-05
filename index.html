@@ -94,9 +94,10 @@
 
   /* ---------- Select projects ---------- */
   .projects{
+    /* no horizontal padding, so the left edge lands exactly on the photo */
     max-width:calc(var(--photo-w) + var(--col-gap) + var(--text-w));
     margin:0 auto;
-    padding:0 var(--gutter) clamp(3rem,7vw,5rem);
+    padding:0 0 clamp(3rem,7vw,5rem);
   }
   .projects__title{
     margin:0 0 1.6em;
