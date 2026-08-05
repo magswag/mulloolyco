@@ -20,8 +20,8 @@
 
     /* Two locked blocks, centered as a pair.
        Set --text-w to var(--photo-w) for two identical squares-of-space. */
-    --photo-w:   min(26rem, 36vw);
-    --text-w:    min(30rem, 42vw);
+    --photo-w:   min(24rem, 33vw);
+    --text-w:    var(--photo-w);   /* text column matches the photo */
 
     --ink:      #281e09;      /* body text */
     --ink-soft: #5c4f36;      /* muted text */
@@ -39,7 +39,7 @@
     font-family:"Crimson Pro", Georgia, "Times New Roman", serif;
     font-size:var(--body-size);
     font-weight:400;
-    line-height:1.65;
+    line-height:1.5;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
   }
@@ -51,15 +51,15 @@
     display:grid;
     grid-template-columns:var(--photo-w) var(--text-w);
     justify-content:center;   /* centers the pair horizontally */
-    align-items:stretch;      /* both blocks share one row height */
+    align-items:stretch;      /* bio stretches to the photo's height */
     gap:var(--col-gap);
-    padding:clamp(1.75rem,4vw,3rem) var(--gutter) clamp(2.5rem,5vw,4rem);
+    padding:clamp(1rem,2.5vw,1.5rem) var(--gutter) clamp(1.25rem,2.5vw,1.75rem);
   }
 
   .portrait{
     margin:0;
     width:100%;
-    aspect-ratio:4/5;
+    aspect-ratio:4/5;          /* fixed portrait crop — do not remove */
     background:#efe9dc;
     overflow:hidden;
   }
@@ -74,10 +74,10 @@
   .bio{
     display:flex;
     flex-direction:column;
-    justify-content:center;   /* vertically centered against the photo */
+    justify-content:center;   /* text centered against the photo */
     min-width:0;
   }
-  .bio p{ margin:0 0 1.35em; }
+  .bio p{ margin:0 0 1.05em; }
   .bio p:last-child{ margin-bottom:0; }
 
   /* ---------- Links ---------- */
@@ -97,21 +97,21 @@
     /* no horizontal padding, so the left edge lands exactly on the photo */
     max-width:calc(var(--photo-w) + var(--col-gap) + var(--text-w));
     margin:0 auto;
-    padding:0 0 clamp(3rem,7vw,5rem);
+    padding:0 0 clamp(1.25rem,2.5vw,1.75rem);
   }
   .projects__title{
-    margin:0 0 1.6em;
+    margin:0 0 1em;
     font-size:1em;
     font-weight:600;
     letter-spacing:.01em;
   }
   .projects__group{
-    margin:0 0 2.1em;
+    margin:0 0 1.35em;
   }
   .projects__group:last-child{ margin-bottom:0; }
 
   .projects h3{
-    margin:0 0 .7em;
+    margin:0 0 .45em;
     font-size:.78em;
     font-weight:600;
     letter-spacing:.12em;
@@ -124,8 +124,8 @@
     padding:0;
   }
   .projects li{
-    margin:0 0 .55em;
-    line-height:1.5;
+    margin:0 0 .25em;
+    line-height:1.4;
   }
   .projects li:last-child{ margin-bottom:0; }
   .projects .note{
@@ -141,32 +141,32 @@
     /* same width as the photo + gap + text, so it lines up underneath */
     max-width:calc(var(--photo-w) + var(--col-gap) + var(--text-w));
     margin:0 auto;
-    padding:clamp(2.5rem,6vw,4.5rem) 0;
+    padding:clamp(1rem,2vw,1.4rem) 0;
     display:flex;
     flex-direction:column;
-    gap:.5em;
-    font-size:.94em;
-    line-height:1.5;
+    gap:.1em;
+    font-size:.9em;
+    line-height:1.4;
   }
   .footer a{ width:fit-content; }
   .footer .place{
     font-style:italic;
     color:var(--ink-soft);
-    margin-top:.2em;
+    margin-top:.15em;
   }
 
   /* ---------- Small screens ---------- */
   @media (max-width:820px){
-    :root{ --photo-w:min(22rem,80vw); --text-w:min(32rem,88vw); }
+    :root{ --photo-w:min(24rem,86vw); }
     .masthead{
-      grid-template-columns:min(22rem,80vw);
+      grid-template-columns:min(24rem,86vw);
       justify-content:center;
-      gap:2.25rem;
-      padding-bottom:2.75rem;
+      gap:1.5rem;
+      padding-bottom:1.5rem;
     }
-    .bio{ width:min(32rem,88vw); }
-    .footer__inner{ max-width:min(32rem,88vw); padding-left:0; padding-right:0; }
-    .projects{ max-width:min(32rem,88vw); padding-left:0; padding-right:0; }
+    .bio{ width:min(24rem,86vw); }
+    .footer__inner{ max-width:min(24rem,86vw); padding-left:0; padding-right:0; }
+    .projects{ max-width:min(24rem,86vw); padding-left:0; padding-right:0; }
   }
 
   @media (prefers-reduced-motion:reduce){
@@ -190,15 +190,14 @@
     </figure>
 
     <article class="bio">
-      <p><a href="https://www.linkedin.com/in/maggie-m/" target="_blank" rel="noopener">Maggie</a> has spent the better part of a decade operating at the center of the climate capital ecosystem, serving as a right hand to leaders who have defined the field.</p>
+      <p><a href="https://www.linkedin.com/in/maggie-m/" target="_blank" rel="noopener">Maggie</a> has spent the better part of a decade operating at the center of the climate capital ecosystem, as right hand to the leaders defining it.</p>
 
-      <p>First as Chief of Staff at <a href="https://www.arcadia.com/" target="_blank" rel="noopener">Arcadia</a>, the climate tech unicorn, where she led executive operations through a period of rapid scale — supporting multiple growth-stage fundraises, M&amp;A transactions and corporate integrations. During her tenure, the portfolio grew to 2+ GW under management, with headcount and operations expanding globally.</p>
+      <p>First as Chief of Staff at <a href="https://www.arcadia.com/" target="_blank" rel="noopener">Arcadia</a>, the climate tech unicorn, where she led executive operations through rapid scale — multiple growth-stage fundraises, M&amp;A transactions, corporate integrations and global expansion.</p>
 
-      <p>Next leading network activation strategies at <a href="https://www.planeteercapital.com/" target="_blank" rel="noopener">Planeteer Capital</a>, supporting the deployment of $55M into ventures at the frontier of AI-powered climate risk intelligence, built environment decarbonization and regenerative agriculture.</p>
+      <p>Then leading network activation at <a href="https://www.planeteercapital.com/" target="_blank" rel="noopener">Planeteer Capital</a>, supporting the deployment of $55M into ventures at the frontier of AI-powered climate risk intelligence, critical mineral discovery, and built environment decarbonization.</p>
 
-      <p>In 2024, she launched an independent consultancy for climate founders and investors navigating moments of complexity — early scale, capital formation, diligence, and transition. Her work sits at the intersection of strategy and execution, with particular strength in fundraising support, M&amp;A diligence, investor communications, and network activation.</p>
+      <p>In 2024 she launched Mullooly Co., an independent consultancy for founders and investors navigating moments of complexity — early capital formation, diligence, and transition. She is most valuable where trust, speed, and judgment matter — stepping in to hold context, close loops, and drive critical initiatives forward.</p>
 
-      <p>She is most valuable in environments where trust, speed, and judgment matter — stepping in to hold context, close loops, and drive critical initiatives forward.</p>
     </article>
 
   </div>
@@ -210,7 +209,7 @@
   <div class="projects__group">
     <h3>M&amp;A Diligence + Corporate Integrations</h3>
     <ul>
-      <li><a href="https://www.esgdive.com/news/arcadia-acquires-engie-impact-unified-energy-management-platform/819341/" target="_blank" rel="noopener">Arcadia acquires Engie IMPACT</a></li>
+      <li><a href="https://www.esgdive.com/news/arcadia-acquires-engie-impact-unified-energy-management-platform/819341/" target="_blank" rel="noopener">Arcadia acquires ENGIE Impact</a></li>
       <li><a href="https://www.globenewswire.com/news-release/2026/02/18/3240155/0/en/Perch-Energy-Announces-Acquisition-of-Mitsui-s-Solstice-Solidifying-the-Company-as-the-US-Leader-in-Community-Solar.html" target="_blank" rel="noopener">Perch acquires Solstice</a></li>
     </ul>
   </div>
@@ -225,7 +224,7 @@
   <div class="projects__group">
     <h3>Network Activation</h3>
     <ul>
-      <li>Climate Week Guides: <a href="https://luma.com/nycwguide2026" target="_blank" rel="noopener">New York</a>, <a href="https://luma.com/planeteer_sfcw" target="_blank" rel="noopener">San Francisco</a> <span class="note">— Definitive guides for investors &amp; founders navigating hundreds of climate gatherings</span></li>
+      <li>Climate Week Guides: <a href="https://luma.com/nycwguide2026" target="_blank" rel="noopener">New York</a>, <a href="https://luma.com/planeteer_sfcw" target="_blank" rel="noopener">San Francisco</a> <span class="note">— Industry resource for investors &amp; founders navigating hundreds of climate gatherings</span></li>
       <li><a href="https://lnkd.in/p/g3Wy7WTH" target="_blank" rel="noopener">Female Founders &amp; Funders</a> <span class="note">— 3K women connected, $2T AUM represented</span></li>
       <li><a href="https://lnkd.in/p/gdCD8fXF" target="_blank" rel="noopener">NY Hardware Meet Up</a></li>
     </ul>
